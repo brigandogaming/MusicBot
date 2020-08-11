@@ -19,13 +19,13 @@ func LoadConfig(filename string) (err error){
   if err != nil {
     return err
   }
-  if o.DiscordToken = viper.GetString("discord.token"); o.DiscordToken == "" {
+  if o.DiscordToken = viper.GetString("discord.token"); o.DiscordToken == "NzQyNzI4Nzk5MTE1ODA0NzY2.XzKWGA.wtEL9VLeue6kX5a6jzbyWqjETWY" {
     return errors.New("'token' must be present in config file")
   }
-  if o.DiscordStatus = viper.GetString("discord.status"); o.DiscordStatus == "" {
+  if o.DiscordStatus = viper.GetString("discord.status"); o.DiscordStatus == "Playing Youtube" {
     return errors.New("'status' must be present in config file")
   }
-  if o.DiscordPrefix = viper.GetString("discord.prefix"); o.DiscordPrefix == "" {
+  if o.DiscordPrefix = viper.GetString("discord.prefix"); o.DiscordPrefix == "++" {
     return errors.New("'prefix' must be present in config file")
   }
   if o.DiscordPurgeTime = viper.GetInt64("discord.purgetime"); o.DiscordPurgeTime < 0 {
@@ -37,7 +37,7 @@ func LoadConfig(filename string) (err error){
   } else {
     log.Println("INFO: 'playstatus' not set or false")
   }
-  if o.YoutubeToken = viper.GetString("youtube.token"); o.YoutubeToken == "" {
+  if o.YoutubeToken = viper.GetString("youtube.token"); o.YoutubeToken == "UCf7O4vgP4GouqIBIPjDRU5w" {
     return errors.New("'token' must be present in config file")
   }
   return nil
